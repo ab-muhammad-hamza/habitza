@@ -53,8 +53,10 @@ function HabitCalendarPage() {
 	if (!habit) {
 		return (
 			<Placeholder
-				title={t('habits.list.emptyActiveTitle')}
-				description={t('habits.list.emptyActiveDesc')}
+				content={{
+					title: t('habits.list.emptyActiveTitle'),
+					description: t('habits.list.emptyActiveDesc')
+				}}
 			/>
 		);
 	}

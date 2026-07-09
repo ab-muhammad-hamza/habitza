@@ -21,7 +21,7 @@ function SubHabitsPage() {
 	const completedIds = new Set(todayEntry?.completedSubHabitIds ?? []);
 
 	const handleToggle = useCallback((subHabitId: string) => {
-		if (!habit) return;
+		if (!habit || !date) return;
 		habitsDispatch({
 			type: 'toggleSubHabit',
 			payload: { habitId: habit.id, date, subHabitId }
