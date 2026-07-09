@@ -26,9 +26,9 @@ async function exportAppData() {
 		const blob = new Blob([jsonStr], { type: 'application/json' });
 		const url = URL.createObjectURL(blob);
 
-		// Create a unique filename with a timestamp (e.g., DoHabit_backup_2008-10-31_14-10)
+		// Create a unique filename with a timestamp (e.g., Habitza_backup_2008-10-31_14-10)
 		const dateStr = formatDate(new Date(), { includeTime: true }).replace(/(\s)|(:)/g, (m) => m === ':' ? '-' : '_');
-		const fileName = `DoHabit_backup_${dateStr}.json`;
+		const fileName = `Habitza_backup_${dateStr}.json`;
 
 		// Temporary link to trigger the browser's download manager
 		const link = document.createElement('a');

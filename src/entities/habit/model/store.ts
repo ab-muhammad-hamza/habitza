@@ -29,7 +29,7 @@ const idbStorage: PersistStorage<unknown> = {
 			}
 
 			// CLEANUP: Remove habit-linked notes after they are successfully migrated
-			const isNotesMigrated = localStorage.getItem('dohabit_notes_migrated') === 'true';
+			const isNotesMigrated = localStorage.getItem('habitza_notes_migrated') === 'true';
 
 			if (data?.state?.habits && isNotesMigrated) {
 				data.state.habits = data.state.habits.map((h: any) => {
@@ -39,7 +39,7 @@ const idbStorage: PersistStorage<unknown> = {
 				});
 
 				needsSave = true;
-				localStorage.removeItem('dohabit_notes_migrated');
+				localStorage.removeItem('habitza_notes_migrated');
 			}
 
 			// Sync storage if data structure or habits were changed during load

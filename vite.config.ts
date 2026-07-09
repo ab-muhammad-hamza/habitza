@@ -6,14 +6,14 @@ import react from '@vitejs/plugin-react';
 import htmlPlugin from 'vite-plugin-html-config';
 import pkg from './package.json';
 
-const APP_NAME = 'DoHabit';
+const APP_NAME = 'Habitza';
 const THEME_COLOR_DARK = '#000000';
 const THEME_COLOR_LIGHT = '#ffffff';
 const BACKGROUND_COLOR_DARK = '#000000';
 const APP_TITLE = `${APP_NAME} | Build Habits, Break Limits & Crush Your Goals`;
 const OG_BANNER_URL = '/assets/img/Repo-Card-Template.jpg';
 
-const PRODUCTION_URL = 'https://dohabit.app/';
+const PRODUCTION_URL = 'https://habitza.zatnum.com/';
 const IS_TEST_BUILD = process.env.VITE_TEST_BUILD === 'true';
 
 const HOMEPAGE = IS_TEST_BUILD

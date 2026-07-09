@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Sitemap: https://dohabit.app/sitemap.xml
+Sitemap: https://habitza.zatnum.com/sitemap.xml
 Disallow:

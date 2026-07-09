@@ -1,7 +1,7 @@
 
 export const STORAGE_KEYS = {
-	HABITS: 'dohabit-habits-storage',
-	NOTES: 'dohabit-notes-storage',
-	ACHIEVEMENTS: 'dohabit-achievements-storage',
-	SETTINGS: 'dohabit-settings-storage',
+	HABITS: 'habitza-habits-storage',
+	NOTES: 'habitza-notes-storage',
+	ACHIEVEMENTS: 'habitza-achievements-storage',
+	SETTINGS: 'habitza-settings-storage',
 } as const;

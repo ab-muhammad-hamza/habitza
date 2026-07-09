@@ -12,7 +12,7 @@ export const noteMigrations: Record<number, (state: any) => any> = {
  * - Renames 'creationDate' to 'createdAt' and converts it to Unix timestamp (number).
  */
 async function migrateToV1(state: any) {
-	const rawHabits = await get('dohabit-habits-storage'); // eslint-disable-line
+	const rawHabits = await get('habitza-habits-storage'); // eslint-disable-line
 
 	// Default fallback state
 	const currentState = { ...state, notes: state?.notes ?? [] };
@@ -47,7 +47,7 @@ async function migrateToV1(state: any) {
 			})
 			.sort((a, b) => a.createdAt - b.createdAt);
 
-		localStorage.setItem('dohabit_notes_migrated', 'true');
+		localStorage.setItem('habitza_notes_migrated', 'true');
 
 		return {
 			...state,

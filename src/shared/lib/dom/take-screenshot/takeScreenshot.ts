@@ -33,7 +33,7 @@ async function takeScreenshot(element: HTMLElement) {
 		return;
 	}
 
-	const fileName = `DoHabit_${Date.now()}.jpg`;
+	const fileName = `Habitza_${Date.now()}.jpg`;
 	const file = new File([blob], fileName, { type: 'image/jpeg' });
 
 	const sharedData: ShareData = {

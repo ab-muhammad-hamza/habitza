@@ -64,13 +64,10 @@ function WelcomeView() {
 				<div className={styles.textColumn}>
 					<div className={styles.logoWrapper}>
 						<img
-							src={`${BASE_URL}assets/brand/logo192-alpha.png`}
+							src={`${BASE_URL}assets/brand/wordmark.png`}
 							alt={t('common.logo')}
 							className={styles.logoImg}
 						/>
-
-						{/* eslint-disable-next-line */}
-						<h2>DoHabit</h2>
 					</div>
 
 					<h1 className={styles.title}>

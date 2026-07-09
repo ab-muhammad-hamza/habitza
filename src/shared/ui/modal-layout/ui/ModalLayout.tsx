@@ -24,7 +24,7 @@ function ModalLayout() {
 			{...modalMotionProps}
 		>
 			<ModalHeader
-				title={modalTitle ?? 'DoHabit'} // eslint-disable-line
+				title={modalTitle ?? 'Habitza'} // eslint-disable-line
 				onClose={handleClose}
 			/>
 

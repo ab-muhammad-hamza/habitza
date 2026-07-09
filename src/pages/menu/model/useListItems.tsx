@@ -50,7 +50,7 @@ function useListItems() {
 			iconProps: { color: '#7fc7ff' },
 			title: t('menu.shared.gitHub.title'),
 			description: t('menu.shared.gitHub.desc'),
-			onClick: () => window.open('https://github.com/iNikAnn/DoHabit', '_blank'),
+			onClick: () => window.open('http://github.com/ab-muhammad-hamza/habitza', '_blank'),
 			indicator: { type: 'external' }
 		},
 		{
@@ -58,7 +58,7 @@ function useListItems() {
 			iconProps: { color: '#EF4444' },
 			title: t('menu.shared.feedback.title'),
 			description: t('menu.shared.feedback.desc'),
-			onClick: () => window.open('https://github.com/iNikAnn/DoHabit/issues/new', '_blank'),
+			onClick: () => window.open('http://github.com/ab-muhammad-hamza/habitza/issues/new', '_blank'),
 			indicator: { type: 'external' }
 		}
 	];

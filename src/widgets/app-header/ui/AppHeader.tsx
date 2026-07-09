@@ -14,7 +14,6 @@ function AppHeader() {
 		<header className={styles.header}>
 			<div className={styles.logoWrapper}>
 				<span className={styles.logo} />
-				<h1>DoHabit</h1> {/* eslint-disable-line */}
 			</div>
 
 			<nav>

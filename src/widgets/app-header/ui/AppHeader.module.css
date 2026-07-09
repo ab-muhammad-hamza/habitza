@@ -17,10 +17,11 @@
 
 .logo {
 	display: block;
-	width: 26px;
-	height: 26px;
-	background: url("/assets/brand/logo192-alpha.png");
+	width: 132px;
+	height: 32px;
+	background: url("/assets/brand/wordmark.png");
 	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .header h1 {
