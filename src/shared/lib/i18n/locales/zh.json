@@ -1,0 +1,389 @@
+{
+	"achievements": {
+		"groups": {
+			"onboarding": "新手入门"
+		},
+		"items": {
+			"accumulated-year": {
+				"desc": "",
+				"title": ""
+			},
+			"compact-calendar": {
+				"desc": "",
+				"hint": "开启紧凑型日历",
+				"title": ""
+			},
+			"diane-morning-log": {
+				"desc": "",
+				"title": ""
+			},
+			"first-archive": {
+				"desc": "",
+				"hint": "归档一个习惯",
+				"title": ""
+			},
+			"first-note": {
+				"desc": "",
+				"hint": "创建第一个笔记",
+				"title": ""
+			},
+			"fresh-start": {
+				"desc": "",
+				"hint": "创建第一个习惯",
+				"title": ""
+			},
+			"gotham-protector": {
+				"desc": "",
+				"title": ""
+			},
+			"gravity-falls-journal": {
+				"desc": "",
+				"title": ""
+			},
+			"habit-vacation-over": {
+				"desc": "",
+				"title": ""
+			},
+			"ill-be-back": {
+				"desc": "",
+				"title": ""
+			},
+			"main-quest-abandoned": {
+				"desc": "",
+				"title": ""
+			},
+			"new-years-resolution": {
+				"desc": "",
+				"title": ""
+			},
+			"not-twitter-approved": {
+				"desc": "",
+				"title": ""
+			},
+			"overachiever-day": {
+				"desc": "",
+				"title": ""
+			},
+			"perfect-day": {
+				"desc": "",
+				"title": ""
+			},
+			"perfect-year": {
+				"desc": "",
+				"title": ""
+			},
+			"storage_info": {
+				"desc": "阅读数据存储说明，了解您的习惯数据是如何保存的。",
+				"hint": "阅读存储说明",
+				"title": "数据守护者"
+			},
+			"time-traveler": {
+				"desc": "",
+				"title": ""
+			},
+			"tolstoy-mode": {
+				"desc": "",
+				"title": ""
+			}
+		},
+		"list": {
+			"emptyDesc": "定期使用解锁稀有成就！",
+			"emptyTitle": "暂无成就"
+		},
+		"notification": {
+			"desc": "新成就已解锁！\n可在成就板块查看。",
+			"title": "解锁成就！"
+		},
+		"title": "成就"
+	},
+	"app": {
+		"errorBoundary": {
+			"desc": "请尝试重载。若无效，请重置应用（进度将备份）。",
+			"dialogs": {
+				"resetConfirm": "备份数据并重置应用？"
+			},
+			"title": "糟糕！出错了"
+		},
+		"update": {
+			"text": "请点击重载按钮以同步最新功能。",
+			"title": "更新就绪！"
+		}
+	},
+	"common": {
+		"all": "全部",
+		"app": "应用",
+		"cancel": "取消",
+		"close": "关闭",
+		"continue": "继续",
+		"day": "天",
+		"end": "结束",
+		"habits": "习惯",
+		"icon": "图标",
+		"info": "消息",
+		"logo": "标志",
+		"reload": "重载",
+		"screenshot": "截图",
+		"settings": "设置",
+		"showLess": "收起",
+		"showMore": "展开",
+		"start": "开始",
+		"support": "支持",
+		"theme": {
+			"auto": "跟随系统",
+			"dark": "深色",
+			"light": "浅色"
+		},
+		"ui": "界面",
+		"version": "版本"
+	},
+	"habits": {
+		"actions": {
+			"archive": "归档习惯",
+			"calendar": "日历",
+			"create": "创建习惯",
+			"createNew": "新建习惯",
+			"delete": "删除习惯",
+			"doneYesterday": "补签昨日",
+			"edit": "编辑",
+			"notes": "笔记",
+			"share": "分享习惯",
+			"undoYesterday": "撤销补签",
+			"update": "保存修改"
+		},
+		"dialogs": {
+			"archiveConfirm": "确定归档此习惯吗？",
+			"deleteConfirm": "确定删除此习惯？数据删除后无法恢复。",
+			"manageTitle": "管理习惯",
+			"restoreConfirm": "确定恢复此习惯吗？"
+		},
+		"form": {
+			"colorDesc": "圆点代表已用颜色，仍可复选。",
+			"colorTitle": "颜色",
+			"errors": {
+				"alreadyExists": "已存在。"
+			},
+			"frequencyDesc": "每日计划重复次数。",
+			"frequencyTitle": "频率",
+			"iconDesc": "变灰图标代表已用，仍可复选。",
+			"iconTitle": "图标",
+			"namePlaceholder": "输入习惯名称...",
+			"nameTitle": "名称",
+			"orderDesc": "习惯在列表中的位置。",
+			"orderSorting": {
+				"btnAlreadyAtBottom": "已在底部",
+				"btnAlreadyAtTop": "已在顶部",
+				"btnMoveToBottom": "移至底部",
+				"btnMoveToTop": "移至顶部",
+				"btnStepDown": "下移",
+				"btnStepUp": "上移"
+			},
+			"orderTitle": "排序"
+		},
+		"list": {
+			"createFirst": "创建首个习惯",
+			"emptyActiveDesc": "现在就去创建一个？",
+			"emptyActiveTitle": "未找到常规习惯",
+			"emptyArchivedDesc": "可在编辑时归档习惯。",
+			"emptyArchivedTitle": "未找到归档习惯"
+		},
+		"share": {
+			"desc": "看这个！",
+			"error": "生成图片失败。",
+			"notSupported": "不支持分享。",
+			"title": "分享"
+		},
+		"stats": {
+			"chartCompletions": "完成数",
+			"currentStreak": "当前",
+			"longestStreak": "最长",
+			"monthlyChartTitle": "每月完成度",
+			"streak": "连续天数",
+			"streakHistoryDesc": "展示连续 2 天以上的记录。",
+			"streakHistoryTitle": "连续记录",
+			"title": "统计",
+			"totalCompleted": "总计完成天数",
+			"weekdayChartTitle": "单周完成度"
+		}
+	},
+	"menu": {
+		"appearance": {
+			"animations": {
+				"desc": "界面过渡与特效",
+				"disabledBySystem": "系统已开启“减弱动态效果”",
+				"title": "动画效果"
+			},
+			"calendar": {
+				"compact": "紧凑",
+				"default": "默认",
+				"highlightToday": {
+					"title": "高亮今天"
+				},
+				"sectionTitle": "日历",
+				"showDayNumbers": {
+					"desc": "仅适用于默认日历",
+					"title": "显示日期数字"
+				},
+				"showWeekdayNames": {
+					"desc": "仅适用于默认日历",
+					"title": "显示星期名称"
+				},
+				"typeDesc": "当前：{{type}}",
+				"typeTitle": "紧凑日历视图"
+			},
+			"desc": "自定义应用外观",
+			"language": {
+				"desc": "当前：{{lang}}",
+				"dialogs": {
+					"selectTitle": "选择语言"
+				},
+				"title": "语言"
+			},
+			"theme": {
+				"desc": "当前：{{theme}}",
+				"dialogs": {
+					"selectThemeTitle": "选择主题"
+				},
+				"selectTitle": "选择主题",
+				"title": "主题"
+			},
+			"title": "外观"
+		},
+		"archive": {
+			"desc": "查看或管理归档习惯",
+			"title": "归档"
+		},
+		"dataManagement": {
+			"backup": {
+				"export": {
+					"desc": "保存备份数据至本地",
+					"dialogs": {
+						"exportConfirm": "下载备份文件？"
+					},
+					"title": "导出"
+				},
+				"import": {
+					"desc": "从备份文件导入应用数据",
+					"notifications": {
+						"error": "导入过程中出错。",
+						"success": "导入成功！应用即将重载。"
+					},
+					"title": "导入"
+				},
+				"sectionTitle": "备份"
+			},
+			"danger": {
+				"clearAll": {
+					"desc": "清除应用所有数据",
+					"dialogs": {
+						"confirm": "确定清除所有数据？\n\n将清空：\n- 所有习惯\n- 所有成就\n- 所有日记\n\n此操作无法撤销！",
+						"prompt": "请输入 \"{{phrase}}\" 以确认："
+					},
+					"notifications": {
+						"error": "操作取消或文本错误。",
+						"success": "数据清除成功！应用即将重载。"
+					},
+					"title": "清空全部"
+				},
+				"sectionTitle": "危险区域"
+			},
+			"desc": "备份、恢复或清除数据",
+			"info": {
+				"storage": {
+					"description": "关于您的习惯数据保存在哪里",
+					"title": "数据存储"
+				}
+			},
+			"title": "数据管理"
+		},
+		"shared": {
+			"feedback": {
+				"desc": "报告错误或提出新功能建议",
+				"title": "报告问题"
+			},
+			"gitHub": {
+				"desc": "查看代码或贡献项目",
+				"title": "GitHub 仓库"
+			}
+		},
+		"title": "菜单"
+	},
+	"notes": {
+		"actions": {
+			"copy": "复制文本",
+			"delete": "删除笔记",
+			"edit": "编辑"
+		},
+		"dialogs": {
+			"deleteConfirm": "确认删除所选笔记吗？"
+		},
+		"form": {
+			"textPlaceholder": "在这里输入笔记..."
+		},
+		"list": {
+			"emptyDesc": "写下第一条日记来记录进展和想法。",
+			"emptyTitle": "笔记本空空如也",
+			"selected": "已选择笔记"
+		},
+		"notifications": {
+			"copyError": "复制失败。",
+			"copySuccess": "已复制！",
+			"createSuccess": "笔记已创建！",
+			"deleteSuccess": "笔记已删除！",
+			"editSuccess": "修改已保存！"
+		},
+		"tags": {
+			"all": "所有标签",
+			"emptyDesc": "写日记时在词前加井号 (#) 即可创建标签。",
+			"emptyTitle": "未找到标签",
+			"forYear": "{{year}} 年标签"
+		},
+		"title": "笔记"
+	},
+	"storageInfo": {
+		"actions": {
+			"confirm": "我知道了"
+		},
+		"intro": "应用将所有数据直接存储在您的设备上。",
+		"notice": "请定期备份。备份文件是一个很小的 JSON 文件，您可以轻松将其转移到任何设备上。",
+		"privacy": "完全隐私：无远程服务器、无云端同步、无追踪器。您的数据完全属于您自己。",
+		"pwa": "为了更安全地保存数据，请将此应用添加到主屏幕。已安装的 PWA 存储受操作系统保护，极少会被自动清除。",
+		"warning": "如果您通过普通浏览器使用它，清除历史记录或缓存将会抹除您的习惯数据。"
+	},
+	"welcome": {
+		"actions": {
+			"continue": "在浏览器中继续",
+			"install": "安装到设备"
+		},
+		"benefits": {
+			"offline": {
+				"desc": "无需任何网络连接。",
+				"title": "纯离线运行"
+			},
+			"privacy": {
+				"desc": "无需账号，无需服务器。",
+				"title": "100% 隐私保护"
+			},
+			"secure": {
+				"desc": "你的数据，完全由你控制。",
+				"title": "数据归你所有"
+			},
+			"simplicity": {
+				"desc": "跳过设置，立即开始记录。",
+				"title": "即开即用"
+			}
+		},
+		"description": "轻量级助手：包含直观统计、连续成就和内置进度日志。",
+		"pwa": {
+			"chromeNudge": {
+				"text": "基于 Chromium 的浏览器支持原生安装。\n请在 Google Chrome 中打开此应用以将其安装到您的设备上。",
+				"title": "需要 Google Chrome"
+			},
+			"ios": {
+				"steps": "在 Safari 浏览器中打开此页面，点击浏览器菜单中的“分享”图标，然后选择“添加到主屏幕”。",
+				"title": "在 iOS 上安装"
+			}
+		},
+		"titleLine1": "建立你的习惯。",
+		"titleLine2": "掌握你的数据。"
+	}
+}

@@ -1,0 +1,14 @@
+/* card */
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+	padding: 16px;
+	background-color: var(--bg-color-primary);
+	border-radius: var(--border-radius-secondary);
+}
+
+.body {
+	/* outline: 1px solid tomato; */
+}

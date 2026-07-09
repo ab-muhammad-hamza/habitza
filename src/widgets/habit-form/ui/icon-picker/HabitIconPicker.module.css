@@ -1,0 +1,54 @@
+.iconCategoryList {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.iconCategoryName {
+	display: block;
+	padding-left: 16px;
+	margin-bottom: 10px;
+	color: var(--color-secondary);
+}
+
+/* iconList */
+.iconList {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-auto-rows: 32px;
+	gap: 8px;
+	justify-content: space-between;
+}
+
+/* label */
+.iconLabel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bg-color-primary);
+	border-radius: var(--border-radius-tertiary);
+}
+
+.iconLabel:has(:checked) {
+	color: var(--color-primary);
+	outline: 2px solid var(--color-primary);
+	outline-offset: -2px;
+	opacity: 1 !important;
+}
+
+/* input */
+.iconList input {
+	visibility: hidden;
+	appearance: none;
+}
+
+/* icon */
+.iconList svg {
+	width: 20px;
+	height: 20px;
+	color: gray;
+}
+
+.iconList input:checked ~ svg {
+	color: inherit;
+}

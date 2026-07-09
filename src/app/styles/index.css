@@ -1,0 +1,109 @@
+::-webkit-scrollbar {
+	display: none;
+}
+
+-webkit-outer-spin-button,
+-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+}
+
+input[type='number'] {
+    appearance: textfield;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	/* https://developer.chrome.com/docs/css-ui/edge-to-edge */
+	--safe-area-max-inset-bottom: env(safe-area-max-inset-bottom, 36px);
+	--app-width: 640px;
+	--header-height: 4rem;
+	--accent-color: dodgerblue;
+	--color-primary: light-dark(hsl(0deg 0% 10%), hsl(0deg 0% 90%));
+	--color-secondary: light-dark(hsl(0deg 0% 40%), hsl(0deg 0% 50%));
+	--bg: light-dark(hsl(0deg 0% 95%), black);
+	--bg-color-primary: light-dark(hsl(0deg 0% 100%), hsl(0deg 0% 8%));
+	--bg-color-secondary: light-dark(hsl(0deg 0% 90%), hsl(0deg 0% 12%));
+	--bg-color-tertiary: light-dark(hsl(0deg 0% 80%), hsl(0deg 0% 20%));
+	--border-radius-primary: 30px;
+	--border-radius-secondary: 20px;
+	--border-radius-tertiary: 10px;
+	--input-height-primary: 3rem;
+}
+
+/* Override LightningCSS polyfill variables when dark theme is forced */
+html[style*="color-scheme: dark"] {
+	--lightningcss-light: ;
+  	--lightningcss-dark: initial;
+}
+
+/* Override LightningCSS polyfill variables when light theme is forced */
+html[style*="color-scheme: light"] {
+  	--lightningcss-light: initial;
+  	--lightningcss-dark: ;
+}
+
+html,
+body {
+	overscroll-behavior-y: contain;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+html {
+	color: var(--color-primary);
+	user-select: none;
+	color-scheme: light dark;
+	background-color: var(--bg);
+}
+
+a {
+	color: unset;
+	text-decoration: none;
+}
+
+button {
+	color: inherit;
+	border: none;
+}
+
+/* Remove mobile tap highlight */
+button,
+a,
+[role="button"] {
+    -webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+}
+
+input {
+	background-color: var(--bg-color-primary);
+	border: none;
+	border-radius: var(--border-radius-secondary);
+}
+
+li {
+	list-style: none;
+}
+
+textarea,
+input,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}

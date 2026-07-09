@@ -1,0 +1,57 @@
+/* content */
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+/* top */
+.top {
+	display: flex;
+	gap: 8px;
+}
+
+.input {
+	width: var(--input-height-primary);
+	height: var(--input-height-primary);
+	text-align: center;
+	pointer-events: none;
+}
+
+.buttonsWrapper {
+	display: flex;
+	gap:4px;
+	width: 100%
+}
+
+.buttonsWrapper button:first-child {
+	border-radius: var(--border-radius-secondary) 4px 4px var(--border-radius-secondary);
+}
+
+.buttonsWrapper button:last-child {
+	border-radius: 4px var(--border-radius-secondary) var(--border-radius-secondary) 4px;
+}
+
+.stepButton {
+	width: 100%;
+	height: 100%;
+	pointer-events: all;
+	background-color: var(--bg-color-primary);
+	border-radius: var(--border-radius-secondary);
+}
+
+/* bottom */
+.bottom {
+	display: flex;
+	gap: 8px;
+	margin-left: calc(var(--input-height-primary) + 8px);
+}
+
+.extremeButton {
+	width: 100%;
+	height: auto;
+	padding: 0;
+	color: dodgerblue;
+	pointer-events: all;
+	background-color: unset;
+}

@@ -1,0 +1,108 @@
+.page {
+	padding: 20px 16px;
+	height: 100%;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+
+.empty {
+	padding: 40px;
+	text-align: center;
+	color: var(--color-text-secondary);
+}
+
+.header {
+	margin-bottom: 20px;
+}
+
+.title {
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin: 0 0 4px;
+	color: inherit;
+}
+
+.date {
+	font-size: 0.85rem;
+	color: var(--habit-color-soft, #999);
+}
+
+.progress {
+	margin-bottom: 24px;
+}
+
+.progressBar {
+	height: 8px;
+	background-color: var(--habit-color-dark, rgba(0,0,0,0.08));
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: 6px;
+}
+
+.progressFill {
+	height: 100%;
+	background-color: var(--habit-color-base, #4a90d9);
+	border-radius: 4px;
+	transition: width 0.2s ease;
+}
+
+.progressText {
+	font-size: 0.8rem;
+	color: var(--habit-color-soft, #999);
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 14px;
+	border: none;
+	border-radius: 10px;
+	background-color: var(--habit-color-dark, rgba(0,0,0,0.05));
+	cursor: pointer;
+	transition: background-color 0.15s;
+	font-family: inherit;
+	font-size: 0.95rem;
+	text-align: left;
+	width: 100%;
+	box-sizing: border-box;
+	color: inherit;
+}
+
+.item:active {
+	filter: brightness(0.9);
+}
+
+.done {
+	background-color: var(--habit-color-base);
+	color: var(--color-primary, #fff);
+	opacity: 0.85;
+}
+
+.checkbox {
+	width: 22px;
+	height: 22px;
+	border: 2px solid var(--habit-color-soft, #999);
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	transition: all 0.15s;
+}
+
+.checked {
+	background-color: var(--color-primary, #fff);
+	border-color: var(--color-primary, #fff);
+	color: var(--habit-color-base);
+}
+
+.label {
+	flex: 1;
+}

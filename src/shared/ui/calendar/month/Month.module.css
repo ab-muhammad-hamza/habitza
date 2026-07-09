@@ -1,0 +1,42 @@
+.month {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.daysGrid,
+.weekdaysGrid {
+	display: grid;
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+	gap: 3px;
+	container-type: inline-size;
+}
+
+.weekdaysGrid {
+    margin-bottom: 10px;
+}
+
+.daysGrid {
+    padding: 0;
+}
+
+.weekday,
+.day {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	text-overflow: clip;
+
+	/* Base size matches cell width, but shifts dynamically with browser font settings (+0.2rem) */
+	font-size: clamp(8px, calc(((100cqw / 7) * 0.35) + 0.2rem), 16px);
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+/* day */
+.day {
+	aspect-ratio: 1;
+	border-radius: 6px;
+}

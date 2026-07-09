@@ -1,0 +1,9 @@
+.habit {
+	overflow: hidden;
+	background-color: var(--bg-color-primary);
+	border-radius: var(--border-radius-secondary);
+}
+
+.contentWrapper {
+	padding: 0 10px 10px;
+}

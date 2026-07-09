@@ -1,0 +1,47 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: var(--header-height);
+	padding: 0 10px;
+	background-color: var(--bg);
+}
+
+/* logo */
+.logoWrapper {
+	/* outline: 1px solid tomato; */
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.logo {
+	display: block;
+	width: 26px;
+	height: 26px;
+	background: url("/assets/brand/logo192-alpha.png");
+	background-size: contain;
+}
+
+.header h1 {
+	font-size: 1.6rem;
+}
+
+/* btnsWrapper */
+.navList {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+
+.navItem {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	background-color: unset;
+}
+
+.navItem svg {
+	width: 22px;
+	height: 22px;
+}

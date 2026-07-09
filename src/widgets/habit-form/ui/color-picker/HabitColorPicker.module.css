@@ -1,0 +1,56 @@
+/* color list */
+.colorList {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-auto-rows: 32px;
+	gap: 8px;
+	justify-content: space-between;
+}
+
+.label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: var(--border-radius-tertiary);
+}
+
+.label:has(:checked) {
+	outline: 2px solid var(--color-primary);
+	outline-offset: -2px;
+}
+
+/* input */
+.colorList input {
+	visibility: hidden;
+	appearance: none;
+}
+
+.usedIndicator {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	width: 8px;
+	height: 8px;
+	background-color: var(--bg-color-primary);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.checkmark {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: none;
+	width: 16px;
+	height: 16px;
+	background-color: var(--color-primary);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.colorList input:checked +.checkmark {
+	display: block;
+}

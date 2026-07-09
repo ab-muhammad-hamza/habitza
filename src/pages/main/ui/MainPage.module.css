@@ -1,0 +1,14 @@
+.mainPage {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	overflow: hidden;
+	outline-offset: -2px;
+}
+
+.content {
+	position: relative;
+	flex: 1;
+	padding-bottom: 16px;
+	overflow-y: auto;
+}

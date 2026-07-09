@@ -1,0 +1,46 @@
+/* note */
+.note {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
+	padding: 16px;
+	padding-bottom: 12px;
+	overflow: hidden;
+	font-size: 1rem;
+	font-weight: 400;
+    overflow-wrap: break-word;
+	white-space: pre-wrap;
+	background-color: var(--bg-color-primary);
+	border-radius: var(--border-radius-secondary);
+}
+
+.note.isSelected {
+	background-color: var(--bg-color-secondary);
+}
+
+/* description */
+.description {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	color: gray;
+}
+
+/* date */
+.date {
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+}
+
+.selectBadge {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--accent-color);
+}

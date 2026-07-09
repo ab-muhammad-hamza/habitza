@@ -1,0 +1,21 @@
+/* input */
+.input {
+	width: 100%;
+	height: var(--input-height-primary);
+	padding: 0 16px;
+	outline-offset: -2px;
+}
+
+.input:focus {
+	outline: 2px solid dodgerblue;
+}
+
+/* isDuplicate */
+.isDuplicate {
+	outline: 2px solid tomato !important;
+}
+
+/* errorMessage */
+.errorMessage {
+	color: tomato;
+}

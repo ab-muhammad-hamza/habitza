@@ -1,0 +1,389 @@
+{
+	"achievements": {
+		"groups": {
+			"onboarding": "Getting Started"
+		},
+		"items": {
+			"accumulated-year": {
+				"desc": "You completed a habit 365 times! Sure, there were gaps, weeks of laziness, and existential crises... but hey, mathematically, it adds up to a whole year!",
+				"title": "A Year... Sort Of"
+			},
+			"compact-calendar": {
+				"desc": "Boom! You have switched your calendar to a compact view. Maximum density, zero distraction.",
+				"hint": "Enable compact calendar",
+				"title": "Space Saver"
+			},
+			"diane-morning-log": {
+				"desc": "“Diane, 7:30 AM...” You've written a note before 9:00. Grab a damn good cup of coffee and a donut — Agent Cooper would definitely approve of your morning routine!",
+				"title": "Good Morning, Diane"
+			},
+			"first-archive": {
+				"desc": "Out of sight, but not forgotten. You have successfully archived your very first habit.",
+				"hint": "Archive a habit",
+				"title": "Clean Slate"
+			},
+			"first-note": {
+				"desc": "You have just created your very first note. Keep capturing your thoughts.",
+				"hint": "Create your first note",
+				"title": "First Note"
+			},
+			"fresh-start": {
+				"desc": "Welcome aboard! You have just created your very first habit. Let’s make it stick.",
+				"hint": "Create your first habit",
+				"title": "Fresh Start"
+			},
+			"gotham-protector": {
+				"desc": "You wrote a note after 01:00. What's keeping you awake? Are you protecting Gotham, or just overthinking again?",
+				"title": "The Dark Knight"
+			},
+			"gravity-falls-journal": {
+				"desc": "You are actively writing down your thoughts and anomalies. Somewhere in Oregon, Dipper Pines is desperately trying to find your notebook to solve the mysteries of your life!",
+				"title": "Journal #4"
+			},
+			"habit-vacation-over": {
+				"desc": "You've returned to your habit after a gap of 21+ days. Just a friendly reminder: the rule was to stick with it for 21 days straight to form a habit, not to take a 3-week vacation from it! But hey, welcome back!",
+				"title": "Habit Formation"
+			},
+			"ill-be-back": {
+				"desc": "You've archived 5 habits — because why actually do them when you can just collect?",
+				"title": "I'll Be Back"
+			},
+			"main-quest-abandoned": {
+				"desc": "The world is ending, Alduin is here, but you've ignored this habit for 7 days straight. Classic Dragonborn behavior. Let's guess, you went to chase butterflies instead?",
+				"title": "The Dragonborn Can Wait"
+			},
+			"new-years-resolution": {
+				"desc": "You broke the curse! Started and completed a habit on January 1st while everyone else is still asleep.",
+				"title": "New Year, New Me"
+			},
+			"not-twitter-approved": {
+				"desc": "Kudos! You've crafted a note longer than 140 characters. Back in the day, this would never fit in a tweet, but you are free from those ancient limits now. Write on!",
+				"title": "Not Twitter-Approved"
+			},
+			"overachiever-day": {
+				"desc": "Wow, three habits in one day! Who knew you had this much free time? Procrastination looks good on you!",
+				"title": "Overachiever of the Day!"
+			},
+			"perfect-day": {
+				"desc": "You've got 3 or more habits, and you've accomplished every single one!",
+				"title": "Perfect Day!"
+			},
+			"perfect-year": {
+				"desc": "365 days of absolute discipline. You started on January 1st and didn’t miss a single day all year round.",
+				"title": "Calendar Conqueror"
+			},
+			"storage_info": {
+				"desc": "Read the data storage information to know how your habits are saved.",
+				"hint": "Read data storage info",
+				"title": "Data Guardian"
+			},
+			"time-traveler": {
+				"desc": "You've officially mastered the art of pretending to be productive — five times!",
+				"title": "I Swear I Did It!"
+			},
+			"tolstoy-mode": {
+				"desc": "Impressive! The total character count in your notes could give Leo Tolstoy a run for his money.",
+				"title": "War and Peace and More"
+			}
+		},
+		"list": {
+			"emptyDesc": "Unlock rare achievements by using the app regularly!",
+			"emptyTitle": "No Achievements Yet"
+		},
+		"notification": {
+			"desc": "It seems that new achievements have been unlocked!\nYou can check them in the achievements section.",
+			"title": "Achievement unlocked!"
+		},
+		"title": "Achievements"
+	},
+	"app": {
+		"errorBoundary": {
+			"desc": "Try reloading. If it doesn’t help, reset the app data (your progress will be saved as a backup).",
+			"dialogs": {
+				"resetConfirm": "Backup your data and reset the app?"
+			},
+			"title": "Oops! Something went wrong"
+		},
+		"update": {
+			"text": "Please click the reload button to sync the latest features.",
+			"title": "Update Ready!"
+		}
+	},
+	"common": {
+		"all": "All",
+		"app": "App",
+		"cancel": "Cancel",
+		"close": "Close",
+		"continue": "Continue",
+		"day": "Day",
+		"end": "End",
+		"habits": "Habits",
+		"icon": "Icon",
+		"info": "Information",
+		"logo": "logo",
+		"reload": "Reload",
+		"screenshot": "screenshot",
+		"settings": "Settings",
+		"showLess": "Show less",
+		"showMore": "Show more",
+		"start": "Start",
+		"support": "Support",
+		"theme": {
+			"auto": "Auto",
+			"dark": "Dark",
+			"light": "Light"
+		},
+		"ui": "Interface",
+		"version": "Version"
+	},
+	"habits": {
+		"actions": {
+			"archive": "Archive habit",
+			"create": "Create habit",
+			"createNew": "Create new habit",
+			"delete": "Delete habit",
+			"doneYesterday": "Done Y'day",
+			"edit": "Edit habit",
+			"calendar": "Calendar",
+			"notes": "Notes",
+			"share": "Share habit",
+			"undoYesterday": "Undo Y'day",
+			"update": "Save changes"
+		},
+		"dialogs": {
+			"archiveConfirm": "Are you sure you want to archive this habit?",
+			"deleteConfirm": "Are you sure you want to delete this habit? Deleted data cannot be recovered.",
+			"manageTitle": "Manage Habit",
+			"restoreConfirm": "Are you sure you want to restore this habit?"
+		},
+		"form": {
+			"colorDesc": "Dots mark colors already in use. You can still reuse them.",
+			"colorTitle": "Color",
+			"errors": {
+				"alreadyExists": "Already exists."
+			},
+			"frequencyDesc": "Add sub-tasks that make up this habit.",
+			"frequencyTitle": "Sub-habits",
+			"iconDesc": "Faded icons are already in use. You can still reuse them.",
+			"iconTitle": "Icon",
+			"namePlaceholder": "Enter habit name...",
+			"nameTitle": "Name",
+			"orderDesc": "The habit's position in your list.",
+			"orderSorting": {
+				"btnAlreadyAtBottom": "Already at Bottom",
+				"btnAlreadyAtTop": "Already at Top",
+				"btnMoveToBottom": "Move to Bottom",
+				"btnMoveToTop": "Move to Top",
+				"btnStepDown": "Step Down",
+				"btnStepUp": "Step Up"
+			},
+			"orderTitle": "Order"
+		},
+		"list": {
+			"createFirst": "Create first habit",
+			"emptyActiveDesc": "Why not create one now?",
+			"emptyActiveTitle": "No active habits found",
+			"emptyArchivedDesc": "You can archive a habit by editing it.",
+			"emptyArchivedTitle": "No archived habits found"
+		},
+		"share": {
+			"desc": "Look at this!",
+			"error": "Failed to generate image.",
+			"notSupported": "Sharing is not supported.",
+			"title": "Share"
+		},
+		"stats": {
+			"chartCompletions": "Completions",
+			"currentStreak": "Current",
+			"longestStreak": "Longest",
+			"monthlyChartTitle": "Completions / Month",
+			"streak": "Streak",
+			"streakHistoryDesc": "Shows streaks of 2 days or more.",
+			"streakHistoryTitle": "Streak history",
+			"title": "Statistics",
+			"totalCompleted": "Total completed days",
+			"weekdayChartTitle": "Completions / Weekday"
+		}
+	},
+	"menu": {
+		"appearance": {
+			"animations": {
+				"desc": "Transitions and UI effects",
+				"disabledBySystem": "Disabled via system Reduced Motion",
+				"title": "Animations"
+			},
+			"calendar": {
+				"compact": "Compact",
+				"default": "Default",
+				"highlightToday": {
+					"title": "Highlight today"
+				},
+				"sectionTitle": "Calendar",
+				"showDayNumbers": {
+					"desc": "Applies to the default calendar only",
+					"title": "Show day numbers"
+				},
+				"showWeekdayNames": {
+					"desc": "Applies to the default calendar only",
+					"title": "Show weekday names"
+				},
+				"typeDesc": "Current: {{type}}",
+				"typeTitle": "Compact calendar view"
+			},
+			"desc": "Customize the app's look",
+			"language": {
+				"desc": "Current: {{lang}}",
+				"dialogs": {
+					"selectTitle": "Select language"
+				},
+				"title": "Language"
+			},
+			"theme": {
+				"desc": "Current: {{theme}}",
+				"dialogs": {
+					"selectThemeTitle": "Select theme"
+				},
+				"selectTitle": "Select theme",
+				"title": "Theme"
+			},
+			"title": "Appearance"
+		},
+		"archive": {
+			"desc": "View or manage archived habits",
+			"title": "Archive"
+		},
+		"dataManagement": {
+			"backup": {
+				"export": {
+					"desc": "Save a backup data to your device",
+					"dialogs": {
+						"exportConfirm": "Download backup file to your device?"
+					},
+					"title": "Export"
+				},
+				"import": {
+					"desc": "Upload your app data from a backup file",
+					"notifications": {
+						"error": "Something went wrong during import.",
+						"success": "Data imported successfully! The application will now reload."
+					},
+					"title": "Import"
+				},
+				"sectionTitle": "Backup"
+			},
+			"danger": {
+				"clearAll": {
+					"desc": "Delete all application data",
+					"dialogs": {
+						"confirm": "Are you sure you want to delete all application data?\n\nThis includes:\n- All your habits\n- All achievements\n- All diary entries\n\nThis action cannot be undone!",
+						"prompt": "To confirm, type: \"{{phrase}}\":"
+					},
+					"notifications": {
+						"error": "Action canceled or incorrect phrase.",
+						"success": "All data has been successfully removed. The application will now reload."
+					},
+					"title": "Clear all"
+				},
+				"sectionTitle": "Danger Zone"
+			},
+			"desc": "Backup, restore, or clear app data",
+			"info": {
+				"storage": {
+					"description": "How and where your habit data is stored",
+					"title": "Data Storage"
+				}
+			},
+			"title": "Data Management"
+		},
+		"shared": {
+			"feedback": {
+				"desc": "Report bugs or suggest new features",
+				"title": "Report an Issue"
+			},
+			"gitHub": {
+				"desc": "View or contribute to the project",
+				"title": "GitHub Repository"
+			}
+		},
+		"title": "Menu"
+	},
+	"notes": {
+		"actions": {
+			"copy": "Copy text",
+			"delete": "Delete note",
+			"edit": "Edit note"
+		},
+		"dialogs": {
+			"deleteConfirm": "Are you sure you want to delete this note(s)?"
+		},
+		"form": {
+			"textPlaceholder": "Enter your note here..."
+		},
+		"list": {
+			"emptyDesc": "Add your first note to start tracking your progress and thoughts.",
+			"emptyTitle": "Diary is empty",
+			"selected": "Notes Selected"
+		},
+		"notifications": {
+			"copyError": "Copy failed.",
+			"copySuccess": "Copied!",
+			"createSuccess": "Note created!",
+			"deleteSuccess": "Note(s) deleted!",
+			"editSuccess": "Changes saved!"
+		},
+		"tags": {
+			"all": "All tags",
+			"emptyDesc": "To create a tag, simply add a hashtag (#) before any word while writing a note.",
+			"emptyTitle": "No tags found",
+			"forYear": "Tags for {{year}}"
+		},
+		"title": "Main diary"
+	},
+	"storageInfo": {
+		"actions": {
+			"confirm": "I understand"
+		},
+		"intro": "The app stores all data directly on your device.",
+		"notice": "Backup regularly. The backup is a tiny JSON file you can move to any device.",
+		"privacy": "Total privacy: no remote servers, no cloud sync, and no trackers. Your data is strictly yours.",
+		"pwa": "For better safety, install this app on your home screen. Installed PWA storage is protected by the OS and rarely cleared automatically.",
+		"warning": "If you use it through a regular browser, clearing history or cache will erase your habits."
+	},
+	"welcome": {
+		"actions": {
+			"continue": "Continue in Browser",
+			"install": "Install on Device"
+		},
+		"benefits": {
+			"offline": {
+				"desc": "No internet connection needed.",
+				"title": "Pure Offline"
+			},
+			"privacy": {
+				"desc": "No accounts, no servers.",
+				"title": "100% Private"
+			},
+			"secure": {
+				"desc": "Your data, under your control.",
+				"title": "You Own Data"
+			},
+			"simplicity": {
+				"desc": "Skip setups, track right away.",
+				"title": "Instant Start"
+			}
+		},
+		"description": "A lightweight assistant featuring visual statistics, streak achievements, and a built-in progress journal.",
+		"pwa": {
+			"chromeNudge": {
+				"text": "Native installation is supported in Chromium-based browsers.\nPlease open this app in Google Chrome to install it on your device.",
+				"title": "Google Chrome Required"
+			},
+			"ios": {
+				"steps": "Open this page in Safari, tap the 'Share' icon in your browser menu, and select 'Add to Home Screen'.",
+				"title": "Install on iOS"
+			}
+		},
+		"titleLine1": "Build your routine.",
+		"titleLine2": "Own your data."
+	}
+}

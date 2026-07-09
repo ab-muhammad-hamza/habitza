@@ -1,0 +1,136 @@
+.page {
+	padding: 16px;
+	height: 100%;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+
+.empty {
+	padding: 40px;
+	text-align: center;
+	color: var(--color-text-secondary);
+}
+
+.yearLabel {
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 20px;
+	color: inherit;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+
+.month {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.monthLabel {
+	font-size: 0.85rem;
+	font-weight: 600;
+	text-align: center;
+	padding: 4px 0;
+	color: inherit;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.weekdayRow {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px;
+}
+
+.weekdayCell {
+	text-align: center;
+	font-size: 0.6rem;
+	font-weight: 500;
+	color: var(--habit-color-soft, #999);
+	padding: 2px 0;
+}
+
+.daysGrid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px;
+}
+
+.dayCell {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
+	border: none;
+	border-radius: 6px;
+	padding: 1px;
+	cursor: pointer;
+	transition: filter 0.15s, transform 0.1s;
+	font-family: inherit;
+	gap: 0;
+}
+
+.dayCell:active:not(:disabled) {
+	filter: brightness(0.85);
+	transform: scale(0.92);
+}
+
+.dayCell:disabled {
+	cursor: default;
+	opacity: 0.3;
+}
+
+.dayNum {
+	font-size: 0.7rem;
+	font-weight: 600;
+	line-height: 1;
+}
+
+.progressLabel {
+	font-size: 0.45rem;
+	font-weight: 500;
+	line-height: 1;
+	margin-top: 1px;
+	opacity: 0.8;
+}
+
+/* State styles */
+.completed {
+	background-color: var(--habit-color-base, #4a90d9);
+	color: var(--color-primary, #fff);
+}
+
+.partial {
+	background-color: var(--habit-color-base, #4a90d9);
+	color: var(--color-primary, #fff);
+	opacity: 0.6;
+}
+
+.empty {
+	background-color: var(--habit-color-dark, rgba(0,0,0,0.08));
+	color: var(--habit-color-soft, #999);
+}
+
+.future {
+	background-color: transparent;
+	color: var(--habit-color-soft, #999);
+	cursor: default;
+}
+
+.today {
+	outline: 2px solid var(--color-primary, #fff);
+	outline-offset: -2px;
+}
+
+@media (max-width: 600px) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 12px;
+	}
+}

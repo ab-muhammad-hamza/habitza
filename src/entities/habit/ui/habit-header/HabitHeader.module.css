@@ -1,0 +1,55 @@
+/* header */
+.header {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	outline-offset: -1px;
+}
+
+/* icon */
+.iconWrapper {
+	color: var(--habit-color-base);
+}
+
+.iconWrapper,
+.actionWrapper button {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	background-color: var(--habit-color-dark);
+	border-radius: var(--border-radius-tertiary);
+}
+
+.iconWrapper svg,
+.actionWrapper button svg {
+	width: 24px;
+	height: 24px;
+}
+
+/* titleWrapper */
+.titleWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* description */
+.description {
+	display: flex;
+	gap: 8px;
+	color: gray;
+}

@@ -1,0 +1,15 @@
+/* yearPicker */
+.yearPicker {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: var(--bg-color-primary);
+	border-radius: var(--border-radius-secondary);
+}
+
+/* button */
+.button {
+	width: 48px;
+	height: 48px;
+}
