@@ -2,7 +2,7 @@ import styles from './SettingsLayout.module.css';
 import { useNavigate, Outlet, useLocation } from 'react-router';
 import { useContext, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { DirectionContext, useInitialRouteState, getRoutePath, ROUTES } from '@shared/lib/router';
+import { DirectionContext, useInitialRouteState, getRoutePath } from '@shared/lib/router';
 import { modalMotionProps } from '@shared/ui/modal-layout/model/modal.animations';
 import ModalHeader from '@shared/ui/modal-layout/ui/ModalHeader';
 import { useTranslation } from 'react-i18next';
