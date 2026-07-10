@@ -15,7 +15,9 @@
 	gap: 8px;
 	padding: 16px 0;
 	margin-top: auto;
-	background-image: linear-gradient(transparent, var(--bg));
+	background: linear-gradient(transparent, var(--bg) 40%);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 	transform: translateY(16px);
 }
 

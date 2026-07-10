@@ -23,6 +23,10 @@ input[type='number'] {
 	--safe-area-max-inset-bottom: env(safe-area-max-inset-bottom, 36px);
 	--app-width: 640px;
 	--header-height: 4rem;
+
+	/* sm: 576px+ */
+	/* md: 1024px+ */
+	/* lg: 1440px+ */
 	--accent-color: dodgerblue;
 	--color-primary: light-dark(hsl(0deg 0% 10%), hsl(0deg 0% 90%));
 	--color-secondary: light-dark(hsl(0deg 0% 40%), hsl(0deg 0% 50%));

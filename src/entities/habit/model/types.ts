@@ -19,6 +19,9 @@ export interface Habit {
 	colorIndex: number;
 	iconTitle: string;
 
+	/** Hex color when colorIndex === -1 (custom color). */
+	customColor?: string;
+
 	/** List of sub-habits replacing the old frequency number. */
 	subHabits: SubHabit[];
 
@@ -39,6 +42,7 @@ export interface HabitData {
 	colorIndex: string;
 	iconTitle: string;
 	order?: string;
+	customColor?: string;
 }
 
 // action types

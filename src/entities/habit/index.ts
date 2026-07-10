@@ -2,6 +2,7 @@ export type { Habit, HabitData, HabitAction, CompletedDay, SubHabit } from './mo
 export { useHabitsStore, habitsStore } from './model/store';
 export { HabitCard } from './ui/habit-card/HabitCard';
 export { HABIT_ICONS, HABIT_ICONS_MAP } from './assets/icons';
+export { getHabitColorVariants } from './lib/getHabitColorVariants';
 export { checkHabitTitleExistence } from './lib/checkHabitTitleExistence';
 export { getCompletedDatesSet } from './lib/getCompletedDatesSet';
 export { getCompletionCountPerDay } from './lib/getCompletionCountPerDay';

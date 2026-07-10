@@ -50,6 +50,7 @@ function HabitForm({ habitId }: HabitFormProps) {
 			subHabits,
 			colorIndex: rawData.colorIndex ?? '0',
 			iconTitle: rawData.iconTitle ?? '',
+			customColor: rawData.customColor || undefined,
 			...(isEditMode ? { order: rawData.order } : {})
 		};
 
@@ -94,6 +95,7 @@ function HabitForm({ habitId }: HabitFormProps) {
 			<HabitColorPicker
 				habits={habits}
 				initialColorIndex={currentHabit?.colorIndex}
+				initialCustomColor={currentHabit?.customColor}
 			/>
 
 			<HabitIconPicker

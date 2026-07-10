@@ -1,8 +1,10 @@
 import styles from './HabitExtraActions.module.css';
 import { useTranslation } from 'react-i18next';
-import { FaEllipsisH } from 'react-icons/fa';
-import useHabitExtraActions from '@widgets/habit-form/model/useHabitExtraActions';
-import { Button, useDrawerStore } from '@shared/ui';
+import { FaEllipsisH, FaTrash } from 'react-icons/fa';
+import { HiArchiveBoxArrowDown } from 'react-icons/hi2';
+import { archiveHabit } from '@features/archive-habit';
+import { removeHabit } from '@features/remove-habit';
+import { Button, useContextMenuStore } from '@shared/ui';
 
 interface HabitExtraActionsProps {
 	habitId: string;
@@ -11,16 +13,34 @@ interface HabitExtraActionsProps {
 
 function HabitExtraActions({ habitId, onSuccess }: HabitExtraActionsProps) {
 	const { t } = useTranslation();
-	const openDrawer = useDrawerStore((s) => s.open);
-	const actions = useHabitExtraActions(habitId, onSuccess);
+	const openContextMenu = useContextMenuStore((s) => s.open);
+
+	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		openContextMenu({
+			title: t('habits.dialogs.manageTitle'),
+			actions: [
+				{
+					icon: FaTrash,
+					label: t('habits.actions.delete'),
+					variant: 'danger' as const,
+					onClick: () => removeHabit(habitId, onSuccess)
+				},
+				{
+					icon: HiArchiveBoxArrowDown,
+					label: t('habits.actions.archive'),
+					onClick: () => archiveHabit(habitId, onSuccess)
+				}
+			],
+			x: rect.left,
+			y: rect.bottom + 4
+		});
+	};
 
 	return (
 		<Button
 			className={styles.button}
-			onClick={() => openDrawer({
-				title: t('habits.dialogs.manageTitle'),
-				actions
-			})}
+			onClick={handleClick}
 		>
 			<FaEllipsisH />
 		</Button>

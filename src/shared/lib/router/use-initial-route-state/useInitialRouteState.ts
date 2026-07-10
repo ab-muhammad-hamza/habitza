@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
+import { useLocation } from 'react-router';
 import { getInitialRouteState } from '../helpers';
 import type { AppRouteKey, PageState } from '../types';
 
 function useInitialRouteState<T extends AppRouteKey>() {
-	const [pageState] = useState<Partial<PageState<T>>>(
-		() => getInitialRouteState<T>() ?? {}
+	const location = useLocation();
+
+	const pageState = useMemo<Partial<PageState<T>>>(
+		() => getInitialRouteState<T>() ?? {},
+		[location.pathname]
 	);
 
 	return pageState;

@@ -14,8 +14,24 @@
 }
 
 @media screen and (width >= 576px) {
+	:root {
+		--app-width: 640px;
+	}
+
 	.App {
 		width: var(--app-width);
 		margin: 0 auto;
+	}
+}
+
+@media screen and (width >= 1024px) {
+	:root {
+		--app-width: 960px;
+	}
+}
+
+@media screen and (width >= 1440px) {
+	:root {
+		--app-width: 1200px;
 	}
 }

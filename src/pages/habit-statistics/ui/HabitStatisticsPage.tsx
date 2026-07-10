@@ -7,8 +7,7 @@ import { StreakHistory } from '@widgets/habit-stats/streak-history';
 import { StreakOverview } from '@widgets/habit-stats/streak-overview';
 import { TotalCompletedMetric } from '@widgets/habit-stats/total-completed-metric';
 import { WeekdayChart } from '@widgets/habit-stats/weekday-chart';
-import { getStreaks, useHabitsStore } from '@entities/habit';
-import { getAppPalette } from '@shared/lib/theme';
+import { getHabitColorVariants, getStreaks, useHabitsStore } from '@entities/habit';
 import { YearPicker } from '@shared/ui';
 import { useInitialRouteState } from '@shared/lib/router';
 
@@ -17,7 +16,7 @@ function HabitStatisticsPage() {
 	const habits = useHabitsStore((s) => s.habits);
 	const habit = habits.find((h) => h.id === habitId);
 
-	const colorVariants = getAppPalette()[habit ? habit.colorIndex : 0];
+	const colorVariants = getHabitColorVariants(habit);
 	const { baseColor, darkenedColor } = colorVariants;
 
 	const completedDays = habit ? habit.completedDays : [];

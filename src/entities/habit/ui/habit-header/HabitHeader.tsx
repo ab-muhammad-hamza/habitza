@@ -1,5 +1,6 @@
 import styles from './HabitHeader.module.css';
 import { type ReactNode } from 'react';
+import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 import { type Habit, HABIT_ICONS_MAP } from '@entities/habit';
 
@@ -18,14 +19,13 @@ function HabitHeader(props: HabitHeaderProps) {
 
 	const { t } = useTranslation();
 
-	// Get icon by title or use default fallback
-	const Icon = HABIT_ICONS_MAP[habit.iconTitle]?.icon
-		?? HABIT_ICONS_MAP['default']?.icon;
+	// Get icon by title — for custom/API icons not in the map, use the title directly
+	const iconName = HABIT_ICONS_MAP[habit.iconTitle]?.icon ?? habit.iconTitle;
 
 	return (
 		<div className={styles.header}>
 			<div className={styles.iconWrapper}>
-				{Icon && <Icon />}
+				<Icon icon={iconName} width={22} height={22} />
 			</div>
 
 			<div className={styles.titleWrapper} >

@@ -6,7 +6,7 @@ import { type Habit, useHabitsStore } from '@entities/habit';
 import { takeScreenshot } from '@shared/lib/dom';
 import { getNavigationTarget } from '@shared/lib/router';
 import { type ColorVariants } from '@shared/lib/theme';
-import { type DrawerAction, useDrawerStore } from '@shared/ui';
+import { type ContextMenuAction, type DrawerAction, useContextMenuStore, useDrawerStore } from '@shared/ui';
 import type { CSSProperties } from 'react';
 
 interface OpenMenuParams {
@@ -20,35 +20,24 @@ interface OpenMenuParams {
 	cardElement: HTMLElement;
 }
 
-/**
- * Hook to manage drawer menu logic.
- */
 function useHabitActions() {
 	const { t } = useTranslation();
 	const habitsDispatch = useHabitsStore((s) => s.habitsDispatch);
 	const openDrawer = useDrawerStore((s) => s.open);
+	const openContextMenu = useContextMenuStore((s) => s.open);
 
 	const getActions = (params: OpenMenuParams): DrawerAction[] => {
 		const {
 			habit,
-			habitStats: {
-				isYdayCompleted,
-				isTodayCompleted,
-				currentStreak
-			},
+			habitStats: { isYdayCompleted, isTodayCompleted, currentStreak },
 			colorVariants,
 			cardElement
 		} = params;
 
 		const { darkenedColor, style } = colorVariants;
-
-		const buttonStyle: CSSProperties = {
-			backgroundColor: darkenedColor,
-			...style
-		};
+		const buttonStyle: CSSProperties = { backgroundColor: darkenedColor, ...style };
 
 		return [
-			// Done/Undo yestarday
 			{
 				icon: isYdayCompleted ? FaCalendarTimes : FaCalendarCheck,
 				label: isYdayCompleted
@@ -56,17 +45,11 @@ function useHabitActions() {
 					: t('habits.actions.doneYesterday'),
 				onClick: () => habitsDispatch({
 					type: 'toggleYesterdayStatus',
-					payload: {
-						habitId: habit.id,
-						isYdayCompleted,
-						isTodayCompleted
-					}
+					payload: { habitId: habit.id, isYdayCompleted, isTodayCompleted }
 				}),
 				style: buttonStyle,
 				className: 'paletteItem'
 			},
-
-			// Open habit editor
 			{
 				...getNavigationTarget('HABIT_EDITOR', {
 					modalTitle: t('habits.actions.edit'),
@@ -78,8 +61,6 @@ function useHabitActions() {
 				style: buttonStyle,
 				className: 'paletteItem'
 			},
-
-			// Share habit
 			{
 				icon: FaShareAlt,
 				label: t('habits.actions.share'),
@@ -87,8 +68,6 @@ function useHabitActions() {
 				style: buttonStyle,
 				className: 'paletteItem'
 			},
-
-			// Open habit statistics
 			{
 				...getNavigationTarget('STATISTICS', {
 					modalTitle: habit.title,
@@ -100,8 +79,6 @@ function useHabitActions() {
 				style: buttonStyle,
 				className: 'paletteItem'
 			},
-
-			// Open habit notes
 			{
 				...getNavigationTarget('DIARY', {
 					modalTitle: habit.title,
@@ -114,8 +91,6 @@ function useHabitActions() {
 				style: buttonStyle,
 				className: 'paletteItem'
 			},
-
-			// Open habit calendar
 			{
 				...getNavigationTarget('CALENDAR', {
 					modalTitle: habit.title,
@@ -130,11 +105,82 @@ function useHabitActions() {
 		];
 	};
 
+	const getContextMenuActions = (params: OpenMenuParams): ContextMenuAction[] => {
+		const {
+			habit,
+			habitStats: { isYdayCompleted, isTodayCompleted, currentStreak },
+			cardElement
+		} = params;
+
+		return [
+			{
+				icon: isYdayCompleted ? FaCalendarTimes : FaCalendarCheck,
+				label: isYdayCompleted
+					? t('habits.actions.undoYesterday')
+					: t('habits.actions.doneYesterday'),
+				onClick: () => habitsDispatch({
+					type: 'toggleYesterdayStatus',
+					payload: { habitId: habit.id, isYdayCompleted, isTodayCompleted }
+				})
+			},
+			{
+				icon: FaPencilAlt,
+				...getNavigationTarget('HABIT_EDITOR', {
+					modalTitle: t('habits.actions.edit'),
+					habitId: habit.id
+				}),
+				label: t('habits.actions.edit'),
+				indicator: { type: 'arrow' }
+			},
+			{
+				icon: FaShareAlt,
+				label: t('habits.actions.share'),
+				onClick: () => takeScreenshot(cardElement)
+			},
+			{
+				icon: FaChartSimple,
+				...getNavigationTarget('STATISTICS', {
+					modalTitle: habit.title,
+					habitId: habit.id
+				}),
+				label: t('habits.stats.title'),
+				indicator: { type: 'arrow' }
+			},
+			{
+				icon: MdLibraryBooks,
+				...getNavigationTarget('DIARY', {
+					modalTitle: habit.title,
+					habitId: habit.id,
+					currentStreak
+				}),
+				label: t('habits.actions.notes'),
+				indicator: { type: 'arrow' }
+			},
+			{
+				icon: FaCalendarAlt,
+				...getNavigationTarget('CALENDAR', {
+					modalTitle: habit.title,
+					habitId: habit.id
+				}),
+				label: t('habits.actions.calendar'),
+				indicator: { type: 'arrow' }
+			}
+		];
+	};
+
 	return {
 		openHabitMenu: ({ habit, ...rest }: OpenMenuParams) => {
 			openDrawer({
 				title: habit.title,
 				actions: getActions({ habit, ...rest })
+			});
+		},
+		openHabitContextMenu: ({ habit, ...rest }: OpenMenuParams, x: number, y: number) => {
+			openContextMenu({
+				title: habit.title,
+				actions: getContextMenuActions({ habit, ...rest }),
+				x,
+				y
 			});
 		}
 	};

@@ -112,6 +112,7 @@
 	"common": {
 		"all": "All",
 		"app": "App",
+		"apply": "Apply",
 		"cancel": "Cancel",
 		"close": "Close",
 		"continue": "Continue",
@@ -123,6 +124,8 @@
 		"logo": "logo",
 		"reload": "Reload",
 		"screenshot": "screenshot",
+		"search": "Search",
+		"clear": "Clear",
 		"settings": "Settings",
 		"showLess": "Show less",
 		"showMore": "Show more",
@@ -164,6 +167,9 @@
 			},
 			"frequencyDesc": "Add sub-tasks that make up this habit.",
 			"frequencyTitle": "Sub-habits",
+			"browseIcons": "Browse icon sets",
+			"customIcon": "Custom icon",
+			"customIconDesc": "Enter any Iconify icon name (e.g.)",
 			"iconDesc": "Faded icons are already in use. You can still reuse them.",
 			"iconTitle": "Icon",
 			"namePlaceholder": "Enter habit name...",
@@ -305,7 +311,7 @@
 				"title": "GitHub Repository"
 			}
 		},
-		"title": "Menu"
+		"title": "Settings"
 	},
 	"notes": {
 		"actions": {

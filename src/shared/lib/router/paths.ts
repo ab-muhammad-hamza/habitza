@@ -1,19 +1,13 @@
-/**
- * Relative paths for modal sub-routes.
- * Rendered via Outlet inside the ModalLayout.
- *
- * If a route requires navigation state, define it in `ExplicitRouteStates` (.types).
- */
 export const ROUTES = {
 	ACHIEVEMENTS: 'achievements',
-	APPEARANCE: 'menu/appearance',
-	ARCHIVE: 'menu/archive',
+	APPEARANCE: 'settings/appearance',
+	ARCHIVE: 'settings/archive',
 	CALENDAR: 'habit-calendar',
-	DATA_MANAGEMENT: 'menu/data-management',
+	DATA_MANAGEMENT: 'settings/data',
 	DIARY: 'diary',
 	HABIT_EDITOR: 'habit-editor',
-	MENU: 'menu',
+	MENU: 'settings',
 	STATISTICS: 'habit-statistics',
-	STORAGE_INFO: 'menu/data-management/storage-info',
-	SUB_HABITS: 'sub-habits'
+	STORAGE_INFO: 'settings/storage-info',
+	SUB_HABITS: 'sub-habits',
 } as const;

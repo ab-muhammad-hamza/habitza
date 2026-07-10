@@ -1,4 +1,4 @@
-import { FaAward, FaBars, FaPlus } from 'react-icons/fa';
+import { FaPlus, FaCog } from 'react-icons/fa';
 import { MdLibraryBooks } from 'react-icons/md';
 import type { NavItem } from './types';
 import { getNavigationTarget } from '@shared/lib/router';
@@ -18,15 +18,9 @@ export const getNavItems = (): NavItem[] => ([
 		icon: MdLibraryBooks
 	},
 	{
-		...getNavigationTarget('ACHIEVEMENTS', {
-			modalTitle: t('achievements.title')
-		}),
-		icon: FaAward
-	},
-	{
 		...getNavigationTarget('MENU', {
 			modalTitle: t('menu.title')
 		}),
-		icon: FaBars
+		icon: FaCog
 	}
 ]);

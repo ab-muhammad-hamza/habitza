@@ -17,6 +17,7 @@
 		"deploy:prod": "npm run build && npx wrangler pages deploy dist --project-name=habitza --commit-message"
 	},
 	"dependencies": {
+		"@iconify/react": "^6.0.2",
 		"@uidotdev/usehooks": "^2.4.1",
 		"chart.js": "^4.5.1",
 		"clsx": "^2.1.1",

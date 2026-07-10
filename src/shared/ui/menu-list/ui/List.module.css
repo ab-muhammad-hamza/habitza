@@ -1,12 +1,13 @@
 .category {
 	/* outline: 1px solid tomato; */
+	margin-top: 20px;
 }
 
 /* list */
 .list {
 	display: flex;
 	flex-direction: column;
-	gap: 2px;
+	gap: 6px;
 	border-radius: var(--border-radius-secondary);
 }
 
@@ -28,5 +29,5 @@
 
 .list li:only-child button,
 .list li:only-child a {
-    border-radius: var(--border-radius-secondary);
+	border-radius: var(--border-radius-secondary);
 }

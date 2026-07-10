@@ -1,0 +1,30 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	padding: 0 16px;
+	overflow: hidden;
+	background-color: var(--bg);
+	height: 100%;
+}
+
+.body {
+	flex: 1;
+	display: flex;
+	overflow: hidden;
+	padding-bottom: 16px;
+}
+
+.sidebar {
+	width: 260px;
+	flex-shrink: 0;
+	overflow-y: auto;
+	padding-right: 16px;
+	border-right: 1px solid var(--bg-color-tertiary);
+	margin-right: 20px;
+}
+
+.content {
+	flex: 1;
+	min-width: 0;
+	overflow-y: auto;
+}

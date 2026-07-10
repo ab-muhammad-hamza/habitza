@@ -3,8 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router';
 import clsx from 'clsx';
 import { useInitialRouteState, getModalPath } from '@shared/lib/router';
-import { useHabitsStore } from '@entities/habit';
-import { getAppPalette } from '@shared/lib/theme';
+import { getHabitColorVariants, useHabitsStore } from '@entities/habit';
 import { formatDate } from '@shared/lib/date-time';
 import { useTranslation } from 'react-i18next';
 import { Placeholder } from '@shared/ui';
@@ -21,7 +20,7 @@ function HabitCalendarPage() {
 	const { t, i18n } = useTranslation();
 
 	const habit = habits.find((h) => h.id === habitId);
-	const colorVariants = getAppPalette()[habit ? habit.colorIndex : 0];
+	const colorVariants = getHabitColorVariants(habit);
 
 	const now = useMemo(() => new Date(), []);
 	const currentYear = now.getFullYear();

@@ -6,7 +6,7 @@ import PWABadge from '../PWABadge';
 import { useCheckAchievements } from '@features/check-achievements';
 import { useSettingsStore, useTheme } from '@entities/settings';
 import { useSystemMotion } from '@shared/lib/react';
-import { Dialog, Drawer } from '@shared/ui';
+import { ContextMenu, Dialog, Drawer, Popover } from '@shared/ui';
 
 function App() {
 	const settings = useSettingsStore((s) => s.settings);
@@ -20,6 +20,8 @@ function App() {
 				<AppRouter />
 				<Dialog />
 				<Drawer />
+				<ContextMenu />
+				<Popover />
 
 				<Toaster
 					position='top-center'

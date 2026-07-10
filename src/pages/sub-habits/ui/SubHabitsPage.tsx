@@ -4,8 +4,7 @@ import clsx from 'clsx';
 import { FaCheck } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useInitialRouteState } from '@shared/lib/router';
-import { useHabitsStore } from '@entities/habit';
-import { getAppPalette } from '@shared/lib/theme';
+import { getHabitColorVariants, useHabitsStore } from '@entities/habit';
 
 function SubHabitsPage() {
 	const { t } = useTranslation();
@@ -14,7 +13,7 @@ function SubHabitsPage() {
 	const habitsDispatch = useHabitsStore((s) => s.habitsDispatch);
 
 	const habit = habits.find((h) => h.id === habitId);
-	const colorVariants = getAppPalette()[habit ? habit.colorIndex : 0];
+	const colorVariants = getHabitColorVariants(habit);
 
 	const todayEntry = habit?.completedDays.find((d) => d.date === date);
 

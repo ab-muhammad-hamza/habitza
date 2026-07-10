@@ -7,13 +7,13 @@ import useLangActions from './useLangActions';
 import { useSettingsStore } from '@entities/settings';
 import { languageMap } from '@shared/lib/i18n';
 import { useSystemMotion } from '@shared/lib/react';
-import { type ListItemProps, Switch, useDrawerStore } from '@shared/ui';
+import { type ListItemProps, Switch, usePopoverStore } from '@shared/ui';
 
 function useListItems() {
 	// UI localization
 	const { t, i18n } = useTranslation();
 
-	const openDrawer = useDrawerStore((s) => s.open);
+	const openPopover = usePopoverStore((s) => s.open);
 	const settings = useSettingsStore((s) => s.settings);
 	const settingsDispatch = useSettingsStore((s) => s.settingsDispatch);
 	const hasReducedMotion = useSystemMotion();
@@ -33,10 +33,13 @@ function useListItems() {
 			description: t('menu.appearance.theme.desc', {
 				theme: t(`common.theme.${settings.theme ?? 'auto'}`)
 			}),
-			onClick: () => {
-				openDrawer({
+			onClick: (e) => {
+				const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+				openPopover({
 					title: t('menu.appearance.theme.dialogs.selectThemeTitle'),
-					actions: themeActions
+					actions: themeActions,
+					x: rect.left,
+					y: rect.bottom + 4
 				})
 			}
 		},
@@ -49,10 +52,13 @@ function useListItems() {
 			description: t('menu.appearance.language.desc', {
 				lang: languageMap[i18n.language]?.label ?? 'Unknown'
 			}),
-			onClick: () => {
-				openDrawer({
+			onClick: (e) => {
+				const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+				openPopover({
 					title: t('menu.appearance.language.dialogs.selectTitle'),
-					actions: langActions
+					actions: langActions,
+					x: rect.left,
+					y: rect.bottom + 4
 				})
 			}
 		},

@@ -3,14 +3,11 @@ import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
 import HabitListEmpty from '../habit-list-empty/HabitListEmpty';
 import HabitListItem from '../habit-list-item/HabitListItem';
-import { useHabitsStore } from '@entities/habit';
-import { getAppPalette } from '@shared/lib/theme';
+import { getHabitColorVariants, useHabitsStore } from '@entities/habit';
 
 interface HabitListProps {
 	isArchive?: boolean;
 }
-
-const palette = getAppPalette();
 
 /**
  * Habit list widget.
@@ -46,7 +43,7 @@ function HabitList(props: HabitListProps) {
 						key={habit.id}
 						habit={habit}
 						index={index}
-						colorVariants={palette[habit.colorIndex] ?? palette[0]}
+						colorVariants={getHabitColorVariants(habit)}
 						isArchive={isArchive}
 					/>
 				))}

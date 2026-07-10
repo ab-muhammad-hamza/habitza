@@ -31,7 +31,7 @@ const HabitListItem = memo((props: HabitListItemProps) => {
 	const navigate = useNavigate();
 	const settings = useSettingsStore((s) => s.settings);
 	const habitStats = useMemo(() => getHabitStats(habit), [habit]);
-	const { openHabitMenu } = useHabitActions();
+	const { openHabitContextMenu } = useHabitActions();
 
 	const handleClick = useCallback(() => {
 		if (isArchive) return;
@@ -47,13 +47,13 @@ const HabitListItem = memo((props: HabitListItemProps) => {
 	const handleContextMenu = useCallback((e: React.MouseEvent) => {
 		e.preventDefault();
 		if (isArchive) return;
-		openHabitMenu({
+		openHabitContextMenu({
 			habit,
 			habitStats,
 			colorVariants,
 			cardElement: e.currentTarget as HTMLElement
-		});
-	}, [isArchive, habit, habitStats, colorVariants, openHabitMenu]);
+		}, e.clientX, e.clientY);
+	}, [isArchive, habit, habitStats, colorVariants, openHabitContextMenu]);
 
 	const headerAction = isArchive
 		? <RestoreHabit habitId={habit.id} />

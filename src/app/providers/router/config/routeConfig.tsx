@@ -10,80 +10,52 @@ import { MainPage } from '@pages/main';
 import { MenuPage } from '@pages/menu';
 import { HabitStatisticsPage } from '@pages/habit-statistics';
 import { SubHabitsPage } from '@pages/sub-habits';
-import { ROUTES, type AppRouteKey } from '@shared/lib/router';
+import { ROUTES } from '@shared/lib/router';
 import { ModalLayout } from '@shared/ui';
+import { SettingsLayout } from '@pages/settings/ui/SettingsLayout';
 import { StorageInfoPage } from '@pages/storage-info';
 
-/**
- * Individual route definitions for modal sub-pages.
- */
-export const modalChildRoutes: Record<AppRouteKey, RouteObject> = {
-	ACHIEVEMENTS: {
-		path: ROUTES.ACHIEVEMENTS,
-		element: <AchievementsPage />
-	},
-	CALENDAR: {
-		path: ROUTES.CALENDAR,
-		element: <HabitCalendarPage />
-	},
-	APPEARANCE: {
-		path: ROUTES.APPEARANCE,
-		element: <AppearancePage />
-	},
-	ARCHIVE: {
-		path: ROUTES.ARCHIVE,
-		element: <ArchivePage />
-	},
-	DATA_MANAGEMENT: {
-		path: ROUTES.DATA_MANAGEMENT,
-		element: <DataManagementPage />
-	},
-	DIARY: {
-		path: ROUTES.DIARY,
-		element: <DiaryPage />
-	},
-	HABIT_EDITOR: {
-		path: ROUTES.HABIT_EDITOR,
-		element: <HabitEditorPage />
-	},
-	MENU: {
-		path: ROUTES.MENU,
-		element: <MenuPage />
-	},
-	STATISTICS: {
-		path: ROUTES.STATISTICS,
-		element: <HabitStatisticsPage />
-	},
-	STORAGE_INFO: {
-		path: ROUTES.STORAGE_INFO,
-		element: <StorageInfoPage />
-	},
-	SUB_HABITS: {
-		path: ROUTES.SUB_HABITS,
-		element: <SubHabitsPage />
-	}
-};
-
-/**
- * Global route configuration.
- *
- * Note: Most functional pages are rendered as sub-routes
- * inside ModalLayout via React Router Outlet.
- *
- * @see {@link ROUTES}
- */
 export const routeConfig: RouteObject[] = [
 	{
 		path: '/',
 		element: <MainPage />
 	},
 	{
-		path: '/modal',
-		element: <ModalLayout />,
-		children: Object.values(modalChildRoutes)
+		path: `/${ROUTES.SUB_HABITS}`,
+		element: <ModalLayout><SubHabitsPage /></ModalLayout>
 	},
 	{
-		/* Fallback for undefined routes */
+		path: `/${ROUTES.HABIT_EDITOR}`,
+		element: <ModalLayout><HabitEditorPage /></ModalLayout>
+	},
+	{
+		path: `/${ROUTES.CALENDAR}`,
+		element: <ModalLayout><HabitCalendarPage /></ModalLayout>
+	},
+	{
+		path: `/${ROUTES.STATISTICS}`,
+		element: <ModalLayout><HabitStatisticsPage /></ModalLayout>
+	},
+	{
+		path: `/${ROUTES.DIARY}`,
+		element: <ModalLayout><DiaryPage /></ModalLayout>
+	},
+	{
+		path: `/${ROUTES.ACHIEVEMENTS}`,
+		element: <ModalLayout><AchievementsPage /></ModalLayout>
+	},
+	{
+		path: `/${ROUTES.MENU}`,
+		element: <SettingsLayout />,
+		children: [
+			{ index: true, element: <MenuPage /> },
+			{ path: 'appearance', element: <AppearancePage /> },
+			{ path: 'archive', element: <ArchivePage /> },
+			{ path: 'data', element: <DataManagementPage /> },
+			{ path: 'storage-info', element: <StorageInfoPage /> },
+		]
+	},
+	{
 		path: '*',
 		element: <Navigate to='/' />
 	}

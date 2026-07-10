@@ -100,7 +100,6 @@
 	opacity: 0.8;
 }
 
-/* State styles */
 .completed {
 	background-color: var(--habit-color-base, #4a90d9);
 	color: var(--color-primary, #fff);
@@ -132,5 +131,17 @@
 	.grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 12px;
+	}
+}
+
+@media screen and (width >= 1024px) {
+	.grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (width >= 1440px) {
+	.grid {
+		grid-template-columns: repeat(6, 1fr);
 	}
 }

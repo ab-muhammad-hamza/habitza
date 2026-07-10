@@ -1,38 +1,34 @@
 import type { Variants } from 'framer-motion';
-import type { Direction } from '@shared/lib/router';
 
 const variants: Variants = {
-	initial: (direction: Direction) => {
-		return direction === 'forward'
-			? {
-				x: '20%',
-				opacity: 0
-			}
-			: {
-				x: '-20%',
-				opacity: 0
-			};
+	initial: {
+		opacity: 0,
+		y: 12,
+		scale: 0.97
 	},
 
 	animate: {
-		x: 0,
 		opacity: 1,
+		y: 0,
+		scale: 1,
 		transition: {
-			type: 'tween',
-			ease: [0.2, 0, 0, 1],
-			duration: 0.3,
+			type: 'spring',
+			stiffness: 350,
+			damping: 30,
+			mass: 1
 		}
 	},
 
-	exit: (direction: Direction) => ({
-		x: direction === 'forward' ? '-20%' : '20%',
+	exit: {
 		opacity: 0,
+		y: -8,
+		scale: 0.98,
 		transition: {
 			type: 'tween',
-			ease: [0.3, 0, 1, 1],
-			duration: 0.2
+			duration: 0.15,
+			ease: 'easeOut'
 		}
-	})
+	}
 };
 
 export const modalMotionProps = {
