@@ -193,21 +193,26 @@ function MockCard({ habit, index }: { habit: typeof MOCK_HABITS[number]; index: 
 
 /* ─────────────────────────────────────────────────────────
    TRACKER SECTION
-   Shows after the hero. Starts small (scale 0.88) and
-   grows to full width as it enters the viewport.
+   Overlaps with the hero bottom — peeks ~180px into the
+   hero viewport on load. On scroll it rises and scales up
+   to full width. Uses sticky + scroll-driven transforms.
 ───────────────────────────────────────────────────────── */
 function TrackerSection() {
-	const ref = useRef<HTMLDivElement>(null);
+	const sectionRef = useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
-		target: ref,
-		offset: ['start end', 'center center'],
+		target: sectionRef,
+		offset: ['start end', 'end start'],
 	});
-	const scale = useTransform(scrollYProgress, [0, 1], [0.84, 1]);
-	const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+	// Starts at 78% scale (peeking small) → grows to full
+	const scale = useTransform(scrollYProgress, [0, 0.45], [0.76, 1]);
+	// Starts transparent → fully visible as it rises
+	const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+	// Shifts upward as user scrolls: starts 60px below (peeking), rises to final position
+	const y = useTransform(scrollYProgress, [0, 0.5], [80, 0]);
 
 	return (
-		<section ref={ref} className={styles.trackerSection}>
-			<motion.div className={styles.trackerWrap} style={{ scale, opacity }}>
+		<section ref={sectionRef} className={styles.trackerSection}>
+			<motion.div className={styles.trackerWrap} style={{ scale, opacity, y }}>
 				<div className={styles.trackerHead}>
 					<span className={styles.trackerTitle}>My Habits</span>
 					<span className={styles.trackerDate}>Today</span>
@@ -373,6 +378,23 @@ function WelcomeView() {
 	const settingsDispatch = useSettingsStore((s) => s.settingsDispatch);
 	const handleContinue = () => settingsDispatch({ type: 'updateSettings', payload: { hasSeenWelcome: true } });
 
+	// Mouse-reactive spotlight in hero
+	const heroRef = useRef<HTMLElement>(null);
+	const spotX = useRef(50);
+	const spotY = useRef(40);
+	const [spotlight, setSpotlight] = useState({ x: 50, y: 40, visible: false });
+
+	const handleHeroMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		spotX.current = ((e.clientX - rect.left) / rect.width) * 100;
+		spotY.current = ((e.clientY - rect.top) / rect.height) * 100;
+		setSpotlight({ x: spotX.current, y: spotY.current, visible: true });
+	}, []);
+
+	const handleHeroMouseLeave = useCallback(() => {
+		setSpotlight(s => ({ ...s, visible: false }));
+	}, []);
+
 	const benefits: { icon: ReactNode; title: string; description: string }[] = [
 		{ icon: <FaShieldAlt />, title: t('welcome.benefits.privacy.title'), description: t('welcome.benefits.privacy.desc') },
 		{ icon: <FaLock />,      title: t('welcome.benefits.secure.title'),  description: t('welcome.benefits.secure.desc')  },
@@ -429,7 +451,22 @@ function WelcomeView() {
 			</motion.header>
 
 			{/* ─── Hero ─── */}
-			<section className={styles.hero}>
+			<section
+				ref={heroRef}
+				className={styles.hero}
+				onMouseMove={handleHeroMouseMove}
+				onMouseLeave={handleHeroMouseLeave}
+			>
+				{/* Mouse-reactive spotlight */}
+				<motion.div
+					className={styles.heroSpotlight}
+					animate={{
+						opacity: spotlight.visible ? 1 : 0,
+						background: `radial-gradient(600px circle at ${spotlight.x}% ${spotlight.y}%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 35%, transparent 70%)`,
+					}}
+					transition={{ opacity: { duration: 0.3 }, background: { duration: 0.06 } }}
+				/>
+
 				<motion.div className={styles.heroBadge} {...fadeUp(0.05)}>
 					<span className={styles.heroBadgeDot} />
 					<span className={styles.heroBadgeText}>Open Source · Free Forever</span>

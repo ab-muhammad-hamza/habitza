@@ -102,6 +102,14 @@ export interface ToggleYesterdayStatus {
 	};
 }
 
+export interface ToggleCalendarDay {
+	type: 'toggleCalendarDay';
+	payload: {
+		habitId: string;
+		date: string;
+	};
+}
+
 export type HabitAction =
 	| AddHabit
 	| EditHabit
@@ -109,7 +117,8 @@ export type HabitAction =
 	| SetHabitArchiveStatus
 	| UpdateProgress
 	| ToggleSubHabit
-	| ToggleYesterdayStatus;
+	| ToggleYesterdayStatus
+	| ToggleCalendarDay;
 
 export interface HabitState {
 	habits: Habit[];

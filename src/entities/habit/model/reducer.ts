@@ -6,6 +6,7 @@ import setHabitArchiveStatus from './handlers/setHabitArchiveStatus';
 import updateHabitProgress from './handlers/updateHabitProgress';
 import toggleYesterdayStatus from './handlers/toggleYesterdayStatus';
 import toggleSubHabitCompletion from './handlers/toggleSubHabitCompletion';
+import toggleCalendarDayCompletion from './handlers/toggleCalendarDayCompletion';
 
 function habitsReducer(habits: Habit[], { type, payload }: HabitAction): Habit[] {
 	switch (type) {
@@ -29,6 +30,9 @@ function habitsReducer(habits: Habit[], { type, payload }: HabitAction): Habit[]
 
 		case 'toggleSubHabit':
 			return toggleSubHabitCompletion({ habits, payload });
+
+		case 'toggleCalendarDay':
+			return toggleCalendarDayCompletion({ habits, payload });
 
 		default: {
 			const _exhaustiveCheck: never = type;

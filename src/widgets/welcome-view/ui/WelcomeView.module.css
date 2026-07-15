@@ -250,8 +250,18 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	padding: 80px 40px 100px;
+	padding: 80px 40px 220px; /* extra bottom so tracker peek doesn't overlap text */
 	gap: 0;
+}
+
+/* Mouse-reactive white radial spotlight overlay */
+.heroSpotlight {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	will-change: background, opacity;
+	border-radius: inherit;
 }
 
 .heroBadge {
@@ -264,6 +274,8 @@
 	background: color-mix(in srgb, var(--color-primary) 4%, transparent);
 	margin-bottom: 20px;
 	animation: pulseBorder 3s ease-in-out infinite;
+	position: relative;
+	z-index: 1; /* above heroSpotlight (z-index: 0) */
 }
 
 .heroBadgeDot {
@@ -395,10 +407,17 @@
 }
 
 /* ─── Tracker Section ─── */
+/* Negative margin-top makes the tracker overlap the hero bottom,
+   creating the "peeking" effect on the initial viewport.
+   A gradient top masks the tracker slightly to give a smooth emergence. */
 .trackerSection {
 	position: relative;
-	z-index: 1;
+	z-index: 2; /* above hero */
+	margin-top: -180px; /* overlap hero by 180px — cards peek into viewport */
 	padding: 0 0 80px;
+	/* Soft fade at the very top so cards emerge cleanly from the hero gradient */
+	-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
+	mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
 }
 
 .trackerWrap {

@@ -17,6 +17,7 @@ function HabitCalendarPage() {
 	const { habitId } = useInitialRouteState<'CALENDAR'>();
 	const navigate = useNavigate();
 	const habits = useHabitsStore((s) => s.habits);
+	const habitsDispatch = useHabitsStore((s) => s.habitsDispatch);
 	const { t, i18n } = useTranslation();
 
 	const habit = habits.find((h) => h.id === habitId);
@@ -40,6 +41,12 @@ function HabitCalendarPage() {
 
 	const handleDayClick = useCallback((date: string) => {
 		if (!habit) return;
+
+		if (!habit.subHabits || habit.subHabits.length === 0) {
+			habitsDispatch({ type: 'toggleCalendarDay', payload: { habitId: habit.id, date } });
+			return;
+		}
+
 		navigate(getModalPath('SUB_HABITS'), {
 			state: {
 				modalTitle: habit.title,
@@ -47,7 +54,7 @@ function HabitCalendarPage() {
 				date
 			}
 		});
-	}, [habit, navigate]);
+	}, [habit, navigate, habitsDispatch]);
 
 	if (!habit) {
 		return (
@@ -151,7 +158,8 @@ function MonthGrid(props: MonthGridProps) {
 		const isFuture = dateStr > todayStr;
 		const progress = dayProgressMap.get(dateStr);
 		const completed = progress?.completed ?? 0;
-		const percentage = totalSubHabits > 0 ? Math.round((completed / totalSubHabits) * 100) : 0;
+		const effectiveTotal = totalSubHabits || 1;
+		const percentage = Math.round((completed / effectiveTotal) * 100);
 		const isFull = percentage >= 100;
 
 		let cellStyle = styles.dayCell;
